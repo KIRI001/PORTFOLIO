@@ -792,30 +792,35 @@
                     <!-- Right: Form -->
                     <div class="contact-form-box glass" data-reveal="fade-left">
                         <form id="contact-form">
+                            <!-- Spam Honeypot -->
+                            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+                            <input type="hidden" name="_captcha" value="false">
+
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="form-name">Name</label>
-                                    <input type="text" id="form-name" required placeholder="John Doe">
+                                    <input type="text" id="form-name" name="name" required placeholder="John Doe">
                                 </div>
                                 <div class="form-group">
                                     <label for="form-email">Email</label>
-                                    <input type="email" id="form-email" required placeholder="john@example.com">
+                                    <input type="email" id="form-email" name="email" required placeholder="john@example.com">
                                 </div>
                             </div>
                             
                             <div class="form-group">
                                 <label for="form-subject">Subject</label>
-                                <input type="text" id="form-subject" required placeholder="Collaboration Idea">
+                                <input type="text" id="form-subject" name="subject" required placeholder="Collaboration Idea">
                             </div>
 
                             <div class="form-group">
                                 <label for="form-message">Message</label>
-                                <textarea id="form-message" rows="5" required placeholder="Hi Sheetal, I'd like to talk about..."></textarea>
+                                <textarea id="form-message" name="message" rows="5" required placeholder="Hi Sheetal, I'd like to talk about..."></textarea>
                             </div>
 
                             <button type="submit" class="btn btn-primary btn-full-width" id="btn-submit-form">
-                                Send Message <i class="fa-regular fa-paper-plane icon-right"></i>
+                                <span class="btn-text">Send Message</span> <i class="fa-regular fa-paper-plane icon-right"></i>
                             </button>
+                            <div class="form-status" id="form-status" style="display: none; margin-top: 14px; text-align: center; font-size: 14px; border-radius: 8px; padding: 10px 14px;"></div>
                         </form>
                     </div>
                 </div>

@@ -949,32 +949,106 @@ function initCommandPalette() {
 }
 
 // =========================================================================
-// CONTACT FORM HANDLER
+// CONTACT FORM HANDLER (Direct Background Email Delivery via FormSubmit AJAX)
 // =========================================================================
 function initContactForm() {
     const form = document.getElementById('contact-form');
     if (!form) return;
 
-    form.addEventListener('submit', (e) => {
+    const submitBtn = document.getElementById('btn-submit-form');
+    const statusBox = document.getElementById('form-status');
+
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const name = document.getElementById('form-name').value.trim();
-        const email = document.getElementById('form-email').value.trim();
-        const subject = document.getElementById('form-subject').value.trim();
-        const message = document.getElementById('form-message').value.trim();
+        // Bot check
+        const honey = form.querySelector('input[name="_honey"]');
+        if (honey && honey.value) return;
 
-        // Build mailto link with form data
-        const body = `Hi Sheetal,\n\n${message}\n\n— ${name}\n(${email})`;
-        const mailtoLink = `mailto:sheetalkumar.kr001@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        const nameInput = document.getElementById('form-name');
+        const emailInput = document.getElementById('form-email');
+        const subjectInput = document.getElementById('form-subject');
+        const messageInput = document.getElementById('form-message');
 
-        window.open(mailtoLink, '_blank');
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const subject = subjectInput.value.trim();
+        const message = messageInput.value.trim();
 
-        showToast("Opening your email client…", "fa-solid fa-envelope-circle-check");
+        if (!name || !email || !subject || !message) {
+            showToast("Please fill in all fields.", "fa-solid fa-triangle-exclamation");
+            return;
+        }
 
-        // Reset form after short delay
-        setTimeout(() => {
-            form.reset();
-        }, 500);
+        // Loading state
+        const originalBtnHtml = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Sending Message...</span>`;
+
+        if (statusBox) {
+            statusBox.style.display = 'block';
+            statusBox.style.background = 'rgba(6, 182, 212, 0.1)';
+            statusBox.style.border = '1px solid rgba(6, 182, 212, 0.3)';
+            statusBox.style.color = '#06b6d4';
+            statusBox.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> Transmitting your message directly to Sheetal's inbox...`;
+        }
+
+        try {
+            const response = await fetch('https://formsubmit.co/ajax/sheetalkumar.kr001@gmail.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    _subject: `Portfolio Message from ${name}: ${subject}`,
+                    message: message,
+                    _template: 'table'
+                })
+            });
+
+            const result = await response.json();
+
+            if (response.ok && (result.success === "true" || result.success === true || result.message)) {
+                // Success
+                if (statusBox) {
+                    statusBox.style.display = 'block';
+                    statusBox.style.background = 'rgba(16, 185, 129, 0.15)';
+                    statusBox.style.border = '1px solid rgba(16, 185, 129, 0.4)';
+                    statusBox.style.color = '#10b981';
+                    statusBox.innerHTML = `<i class="fa-solid fa-circle-check"></i> <strong>Message Sent Successfully!</strong><br>Thank you, ${name}. Sheetal will respond to ${email} shortly.`;
+                }
+
+                showToast(`Message sent successfully!`, "fa-solid fa-circle-check");
+                form.reset();
+
+                // Clear status after 8 seconds
+                setTimeout(() => {
+                    if (statusBox) statusBox.style.display = 'none';
+                }, 8000);
+            } else {
+                throw new Error(result.message || 'Submission failed');
+            }
+        } catch (error) {
+            console.warn('FormSubmit AJAX issue, providing direct fallback:', error);
+            
+            // Graceful fallback to mailto if network blocked
+            if (statusBox) {
+                statusBox.style.display = 'block';
+                statusBox.style.background = 'rgba(245, 158, 11, 0.15)';
+                statusBox.style.border = '1px solid rgba(245, 158, 11, 0.4)';
+                statusBox.style.color = '#f59e0b';
+                const body = `Hi Sheetal,\n\n${message}\n\n— ${name}\n(${email})`;
+                const mailtoLink = `mailto:sheetalkumar.kr001@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                statusBox.innerHTML = `<i class="fa-solid fa-info-circle"></i> Network blocked API submission. <a href="${mailtoLink}" style="color:#ffffff; text-decoration:underline; font-weight:600;">Click here to open email directly</a>.`;
+            }
+            showToast("Opening email fallback...", "fa-solid fa-envelope");
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnHtml;
+        }
     });
 }
 
