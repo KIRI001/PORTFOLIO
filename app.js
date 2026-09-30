@@ -949,21 +949,16 @@ function initCommandPalette() {
 }
 
 // =========================================================================
-// CONTACT FORM HANDLER (Direct Background Email Delivery via FormSubmit AJAX)
+// CONTACT FORM HANDLER (Direct 1-Click Gmail & Mail Draft Creator)
 // =========================================================================
 function initContactForm() {
     const form = document.getElementById('contact-form');
     if (!form) return;
 
-    const submitBtn = document.getElementById('btn-submit-form');
     const statusBox = document.getElementById('form-status');
 
-    form.addEventListener('submit', async (e) => {
+    form.addEventListener('submit', (e) => {
         e.preventDefault();
-
-        // Bot check
-        const honey = form.querySelector('input[name="_honey"]');
-        if (honey && honey.value) return;
 
         const nameInput = document.getElementById('form-name');
         const emailInput = document.getElementById('form-email');
@@ -980,74 +975,63 @@ function initContactForm() {
             return;
         }
 
-        // Loading state
-        const originalBtnHtml = submitBtn.innerHTML;
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Sending Message...</span>`;
+        const body = `Hi Sheetal,\n\n${message}\n\n—\nBest regards,\n${name}\nEmail: ${email}`;
+        const recipient = 'sheetalkumar.kr001@gmail.com';
+        
+        // Gmail Web compose link
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipient)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        // Default mail client link
+        const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
+        // Attempt opening Gmail in new tab
+        const win = window.open(gmailUrl, '_blank');
+
+        showToast("Opening Gmail draft...", "fa-solid fa-envelope-open-text");
+
+        // Display confirmation banner with fallback & copy actions
         if (statusBox) {
             statusBox.style.display = 'block';
-            statusBox.style.background = 'rgba(6, 182, 212, 0.1)';
-            statusBox.style.border = '1px solid rgba(6, 182, 212, 0.3)';
-            statusBox.style.color = '#06b6d4';
-            statusBox.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> Transmitting your message directly to Sheetal's inbox...`;
-        }
+            statusBox.style.background = 'rgba(16, 185, 129, 0.12)';
+            statusBox.style.border = '1px solid rgba(16, 185, 129, 0.35)';
+            statusBox.style.color = '#f8fafc';
+            statusBox.style.padding = '14px 16px';
+            statusBox.style.borderRadius = '12px';
+            statusBox.style.marginTop = '16px';
+            statusBox.style.textAlign = 'left';
 
-        try {
-            const response = await fetch('https://formsubmit.co/ajax/sheetalkumar.kr001@gmail.com', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({
-                    name: name,
-                    email: email,
-                    _subject: `Portfolio Message from ${name}: ${subject}`,
-                    message: message,
-                    _template: 'table'
-                })
-            });
+            statusBox.innerHTML = `
+                <div style="font-weight: 700; color: #10b981; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-circle-check"></i> Draft Created!
+                </div>
+                <p style="font-size: 13px; color: #cbd5e1; margin-bottom: 12px; line-height: 1.5;">
+                    Gmail opened in a new tab with your message pre-filled. Just review and click <strong>Send</strong>!
+                </p>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap; font-size: 12px;">
+                    <a href="${gmailUrl}" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 6px 12px; font-size: 12px; border-radius: 8px;">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Gmail
+                    </a>
+                    <a href="${mailtoLink}" class="btn btn-outline" style="padding: 6px 12px; font-size: 12px; border-radius: 8px;">
+                        <i class="fa-regular fa-envelope"></i> Default Mail Client
+                    </a>
+                    <button type="button" id="btn-copy-form-draft" class="btn btn-outline" style="padding: 6px 12px; font-size: 12px; border-radius: 8px;">
+                        <i class="fa-regular fa-copy"></i> Copy Message
+                    </button>
+                </div>
+            `;
 
-            const result = await response.json();
-
-            if (response.ok && (result.success === "true" || result.success === true || result.message)) {
-                // Success
-                if (statusBox) {
-                    statusBox.style.display = 'block';
-                    statusBox.style.background = 'rgba(16, 185, 129, 0.15)';
-                    statusBox.style.border = '1px solid rgba(16, 185, 129, 0.4)';
-                    statusBox.style.color = '#10b981';
-                    statusBox.innerHTML = `<i class="fa-solid fa-circle-check"></i> <strong>Message Sent Successfully!</strong><br>Thank you, ${name}. Sheetal will respond to ${email} shortly.`;
-                }
-
-                showToast(`Message sent successfully!`, "fa-solid fa-circle-check");
-                form.reset();
-
-                // Clear status after 8 seconds
-                setTimeout(() => {
-                    if (statusBox) statusBox.style.display = 'none';
-                }, 8000);
-            } else {
-                throw new Error(result.message || 'Submission failed');
+            // Attach copy button action
+            const copyDraftBtn = document.getElementById('btn-copy-form-draft');
+            if (copyDraftBtn) {
+                copyDraftBtn.addEventListener('click', () => {
+                    const fullText = `To: ${recipient}\nSubject: ${subject}\n\n${body}`;
+                    navigator.clipboard.writeText(fullText).then(() => {
+                        showToast("Message & recipient copied to clipboard!", "fa-regular fa-copy");
+                    }).catch(() => {
+                        showToast("Message copied!", "fa-regular fa-copy");
+                    });
+                });
             }
-        } catch (error) {
-            console.warn('FormSubmit AJAX issue, providing direct fallback:', error);
-            
-            // Graceful fallback to mailto if network blocked
-            if (statusBox) {
-                statusBox.style.display = 'block';
-                statusBox.style.background = 'rgba(245, 158, 11, 0.15)';
-                statusBox.style.border = '1px solid rgba(245, 158, 11, 0.4)';
-                statusBox.style.color = '#f59e0b';
-                const body = `Hi Sheetal,\n\n${message}\n\n— ${name}\n(${email})`;
-                const mailtoLink = `mailto:sheetalkumar.kr001@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                statusBox.innerHTML = `<i class="fa-solid fa-info-circle"></i> Network blocked API submission. <a href="${mailtoLink}" style="color:#ffffff; text-decoration:underline; font-weight:600;">Click here to open email directly</a>.`;
-            }
-            showToast("Opening email fallback...", "fa-solid fa-envelope");
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalBtnHtml;
         }
     });
 }
