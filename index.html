@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheetal Kumar | Full-Stack & AI Developer</title>
+    <meta name="description" content="Portfolio of Sheetal Kumar, a Full-Stack & AI Developer specializing in MERN stack, Machine Learning, and Generative AI. Explore projects, skills, and experience.">
+    <meta name="keywords" content="Sheetal Kumar, Full-Stack Developer, AI Developer, MERN Stack, Machine Learning, Generative AI, Portfolio">
+    <meta name="author" content="Sheetal Kumar">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sheetal Kumar | Full-Stack & AI Developer">
+    <meta property="og:description" content="Portfolio of Sheetal Kumar, specializing in MERN stack, Machine Learning, and Generative AI. Check out projects and interactive AI assistant.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Canvas Particle Constellation Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Ambient glow backdrops -->
+    <div class="ambient-glow bg-glow-1"></div>
+    <div class="ambient-glow bg-glow-2"></div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="custom-cursor"></div>
+    <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo" id="logo-link">
+                <span class="logo-accent">&lt;</span>SHEETAL<span class="logo-accent"> /&gt;</span>
+            </a>
+            
+            <nav class="nav-links" id="nav-menu">
+                <a href="#about" class="nav-link active">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#ai-playground" class="nav-link">AI Demo</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#experience" class="nav-link">Timeline</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="btn btn-recruiter-mode" id="btn-recruiter-mode" title="30-Second Executive Summary for Hiring Managers">
+                    <i class="fa-solid fa-bolt"></i> Recruiter Mode
+                </button>
+                <button class="btn btn-cli-toggle" id="btn-cli-toggle" title="Developer CLI Terminal (Ctrl+K)">
+                    <i class="fa-solid fa-terminal"></i> <span>⌘K</span>
+                </button>
+                <a href="mailto:sheetalkumar.kr001@gmail.com" class="btn btn-outline" id="btn-hire-me">Hire Me</a>
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="badge-pill hero-badge" data-reveal="fade-up">
+                        <span class="badge-dot"></span> Final-Year CSE Undergraduate (B.Tech 2026)
+                    </div>
+                    
+                    <h1 class="hero-title" data-reveal="fade-up" data-delay="100">
+                        Hi, I'm <span class="text-glow">Sheetal Kumar</span>
+                    </h1>
+                    
+                    <h2 class="hero-subtitle" data-reveal="fade-up" data-delay="200">
+                        I build <span class="typing-text" id="typing-target"></span><span class="typed-cursor">|</span>
+                    </h2>
+                    
+                    <p class="hero-description" data-reveal="fade-up" data-delay="300">
+                        A passionate Full-Stack &amp; AI Developer combining MERN stack expertise with machine learning and generative AI deployment to solve real-world problems.
+                    </p>
+                    
+                    <div class="hero-ctas" data-reveal="fade-up" data-delay="400">
+                        <a href="#projects" class="btn btn-primary" id="hero-btn-work">
+                            View Projects <i class="fa-solid fa-arrow-right icon-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary" id="hero-btn-contact">
+                            Let's Connect
+                        </a>
+                    </div>
+                    
+                    <div class="hero-socials" data-reveal="fade-up" data-delay="500">
+                        <a href="https://github.com/KIRI001" target="_blank" rel="noopener" class="social-icon-link" aria-label="GitHub Profile" id="hero-github">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/sheetal-kumar-510b86257" target="_blank" rel="noopener" class="social-icon-link" aria-label="LinkedIn Profile" id="hero-linkedin">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:sheetalkumar.kr001@gmail.com" class="social-icon-link" aria-label="Email Sheetal" id="hero-email">
+                            <i class="fa-regular fa-envelope"></i>
+                        </a>
+                        <a href="tel:+918083280965" class="social-icon-link" aria-label="Call Sheetal" id="hero-phone">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual" data-reveal="fade-left">
+                    <div class="visual-wrapper">
+                        <!-- Hologram Ring Backgrounds -->
+                        <div class="holo-ring holo-ring-1"></div>
+                        <div class="holo-ring holo-ring-2"></div>
+                        
+                        <!-- Main Card (Glassmorphism Dashboard Interface) -->
+                        <div class="dashboard-card glass">
+                            <div class="card-header">
+                                <div class="header-dots">
+                                    <span class="dot-red"></span>
+                                    <span class="dot-yellow"></span>
+                                    <span class="dot-green"></span>
+                                </div>
+                                <div class="header-title">sheetal_kumar_agent.py</div>
+                            </div>
+                            <div class="card-body terminal-code">
+                                <p class="code-line"><span class="code-keyword">import</span> agent_framework <span class="code-keyword">as</span> af</p>
+                                <p class="code-line"><span class="code-keyword">from</span> sheetal <span class="code-keyword">import</span> Developer</p>
+                                <p class="code-line">&nbsp;</p>
+                                <p class="code-line">dev = Developer(name=<span class="code-string">"Sheetal Kumar"</span>)</p>
+                                <p class="code-line">dev.skills = [<span class="code-string">"MERN"</span>, <span class="code-string">"ML"</span>, <span class="code-string">"GenAI"</span>]</p>
+                                <p class="code-line">&nbsp;</p>
+                                <p class="code-line"><span class="code-keyword">async def</span> <span class="code-func">execute_mission</span>():</p>
+                                <p class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;goals = [<span class="code-string">"Build clean code"</span>, <span class="code-string">"Deploy AI models"</span>]</p>
+                                <p class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">await</span> dev.solve_real_world(goals)</p>
+                                <p class="code-line">&nbsp;</p>
+                                <p class="code-line"><span class="code-comment"># Active Session: Running...</span></p>
+                                <div class="status-bar-terminal">
+                                    <span class="status-indicator-active"></span> Core Engine Active
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#about" class="scroll-indicator-wrapper" aria-label="Scroll Down">
+                <span class="scroll-mouse">
+                    <span class="scroll-wheel"></span>
+                </span>
+            </a>
+        </section>
+
+        <!-- About Section (Summary) -->
+        <section class="about-section" id="about">
+            <div class="container">
+                <div class="section-title-wrapper" data-reveal="fade-up">
+                    <span class="section-subtitle">Who I Am</span>
+                    <h2 class="section-title">About Me</h2>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-text-content" data-reveal="fade-right">
+                        <h3>Combining Full-Stack Capabilities with Intelligent Solutions</h3>
+                        <p>
+                            I am a final-year Computer Science &amp; Engineering undergraduate graduating in 2026 from Dumka Engineering College, Jharkhand. I specialize in designing and deploying end-to-end full-stack applications with advanced AI components.
+                        </p>
+                        <p>
+                            From training neural networks with high diagnostic accuracy to containerizing backend communication servers for real-time performance, I focus on engineering clean, scalable, and responsive products that improve user experiences.
+                        </p>
+                        
+                        <div class="info-metric-grid">
+                            <div class="metric-card glass">
+                                <div class="metric-number text-glow" data-counter-target="95.31" data-suffix="%">95.31%</div>
+                                <div class="metric-label">AI Diagnostic Model Recall Rate</div>
+                            </div>
+                            <div class="metric-card glass">
+                                <div class="metric-number text-glow" data-counter-target="500" data-suffix="+">500+</div>
+                                <div class="metric-label">LeetCode DSA Problems Solved</div>
+                            </div>
+                            <div class="metric-card glass">
+                                <div class="metric-number text-glow" data-counter-target="4" data-suffix="+">4+</div>
+                                <div class="metric-label">Full-Stack &amp; AI Apps Deployed</div>
+                            </div>
+                            <div class="metric-card glass">
+                                <div class="metric-number text-glow" data-counter-prefix="&lt;" data-counter-target="200" data-suffix="ms">&lt;200ms</div>
+                                <div class="metric-label">Socket.IO Real-Time Chat Latency</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-profile-card glass" data-reveal="fade-left">
+                        <div class="profile-header">
+                            <div class="avatar-glow">
+                                <i class="fa-solid fa-user-gear profile-placeholder-icon"></i>
+                            </div>
+                            <h3 class="profile-name">Sheetal Kumar</h3>
+                            <p class="profile-tagline">Full-Stack &amp; AI Engineer</p>
+                        </div>
+                        
+                        <div class="profile-details">
+                            <div class="detail-item">
+                                <span class="detail-label"><i class="fa-solid fa-graduation-cap"></i> Education:</span>
+                                <span class="detail-val">B.Tech CSE, Dumka Eng. College</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label"><i class="fa-solid fa-location-dot"></i> Location:</span>
+                                <span class="detail-val">Bangalore, Karnataka, India</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label"><i class="fa-solid fa-envelope"></i> Email:</span>
+                                <a href="mailto:sheetalkumar.kr001@gmail.com" class="detail-val text-link">sheetalkumar.kr001@gmail.com</a>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label"><i class="fa-solid fa-phone"></i> Phone:</span>
+                                <a href="tel:+918083280965" class="detail-val text-link">+91 8083280965</a>
+                            </div>
+                        </div>
+                        
+                        <a href="mailto:sheetalkumar.kr001@gmail.com" class="btn btn-primary btn-full-width" id="about-btn-connect">
+                            Get In Touch
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects-section" id="projects">
+            <div class="container">
+                <div class="section-title-wrapper" data-reveal="fade-up">
+                    <span class="section-subtitle">My Creative Space</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                </div>
+                
+                <!-- Category Filtering Tabs -->
+                <div class="project-filters" data-reveal="fade-up">
+                    <button class="filter-tab active" data-filter="all" id="filter-all">All Projects</button>
+                    <button class="filter-tab" data-filter="ai-ml" id="filter-ai-ml">AI &amp; Machine Learning</button>
+                    <button class="filter-tab" data-filter="web-fullstack" id="filter-web">Web / MERN Stack</button>
+                    <button class="filter-tab" data-filter="mobile" id="filter-mobile">Mobile</button>
+                </div>
+                
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card glass" data-category="ai-ml" data-reveal="fade-up">
+                        <div class="project-img-placeholder">
+                            <i class="fa-solid fa-microscope card-fallback-icon"></i>
+                            <div class="project-badge">Deep Learning</div>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-card-title">Automated Pityriasis Alba Detection Using Deep Learning</h3>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>CNN</span>
+                                <span>Deep Learning</span>
+                                <span>Flask</span>
+                                <span>React.js</span>
+                            </div>
+                            <ul class="project-bullet-points">
+                                <li>Developed an AI-powered skin disease detection system for identifying Pityriasis Alba.</li>
+                                <li>Trained and evaluated CNN-based models on annotated dermatology datasets.</li>
+                                <li>Achieved <strong>78.84% accuracy</strong> and <strong>95.31% recall</strong> on the test dataset.</li>
+                                <li>Built an image upload and prediction pipeline for real-time disease detection.</li>
+                                <li>Used Roboflow for image annotation and dataset preprocessing.</li>
+                            </ul>
+                        </div>
+                        <div class="project-footer">
+                            <button class="btn-project-specs" data-project="skin" id="project-skin-specs">
+                                <i class="fa-solid fa-diagram-project"></i> Deep Dive &amp; Arch
+                            </button>
+                            <a href="https://github.com/KIRI001" target="_blank" rel="noopener" class="btn-project-link" id="project-skin-github">
+                                <i class="fa-brands fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card glass" data-category="web-fullstack" data-reveal="fade-up" data-delay="100">
+                        <div class="project-img-placeholder">
+                            <i class="fa-solid fa-notes-medical card-fallback-icon"></i>
+                            <div class="project-badge">MERN App</div>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-card-title">Mental Health Wellness Platform</h3>
+                            <div class="project-tags">
+                                <span>React.js</span>
+                                <span>Node.js</span>
+                                <span>Express.js</span>
+                                <span>MongoDB</span>
+                                <span>JWT</span>
+                            </div>
+                            <ul class="project-bullet-points">
+                                <li>Developed a full-stack MERN app serving anonymous journaling &amp; medicine tracking for <strong>50+ test users</strong>.</li>
+                                <li>Secured user data with JWT authentication and bcrypt password hashing, ensuring zero vulnerabilities.</li>
+                                <li>Constructed a custom medicine reminder system with scheduled notifications to increase user adherence.</li>
+                            </ul>
+                        </div>
+                        <div class="project-footer">
+                            <button class="btn-project-specs" data-project="mental" id="project-mental-specs">
+                                <i class="fa-solid fa-diagram-project"></i> Deep Dive &amp; Arch
+                            </button>
+                            <a href="https://github.com/KIRI001" target="_blank" rel="noopener" class="btn-project-link" id="project-mental-github">
+                                <i class="fa-brands fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card glass" data-category="ai-ml web-fullstack" data-reveal="fade-up" data-delay="200">
+                        <div class="project-img-placeholder">
+                            <i class="fa-solid fa-map-location-dot card-fallback-icon"></i>
+                            <div class="project-badge">AI Integration</div>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-card-title">AI-Powered Travel Planner</h3>
+                            <div class="project-tags">
+                                <span>React.js</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                                <span>REST APIs</span>
+                            </div>
+                            <ul class="project-bullet-points">
+                                <li>Built an AI itinerary generator consuming 3 third-party APIs, reducing trip planning to <strong>under 2 minutes</strong>.</li>
+                                <li>Designed a drag-and-drop schedule planner UI with MongoDB persistence for data retention across sessions.</li>
+                                <li>Integrated robust API error handling and retry logic ensuring 99% uptime for live travel data.</li>
+                            </ul>
+                        </div>
+                        <div class="project-footer">
+                            <button class="btn-project-specs" data-project="travel" id="project-travel-specs">
+                                <i class="fa-solid fa-diagram-project"></i> Deep Dive &amp; Arch
+                            </button>
+                            <a href="https://github.com/KIRI001" target="_blank" rel="noopener" class="btn-project-link" id="project-travel-github">
+                                <i class="fa-brands fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card glass" data-category="mobile web-fullstack" data-reveal="fade-up" data-delay="300">
+                        <div class="project-img-placeholder">
+                            <i class="fa-solid fa-comments card-fallback-icon"></i>
+                            <div class="project-badge">Socket.io &amp; Mobile</div>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-card-title">Real-Time Chat Application</h3>
+                            <div class="project-tags">
+                                <span>React Native</span>
+                                <span>Socket.IO</span>
+                                <span>Node.js</span>
+                                <span>Docker</span>
+                            </div>
+                            <ul class="project-bullet-points">
+                                <li>Launched a cross-platform chat app with <strong>&lt;200ms message latency</strong> across 10+ concurrent users.</li>
+                                <li>Containerised full backend using Docker, reducing deployment setup time from 30 to <strong>under 5 minutes</strong>.</li>
+                                <li>Configured offline message storage ensuring 0% message loss during network interruptions.</li>
+                            </ul>
+                        </div>
+                        <div class="project-footer">
+                            <button class="btn-project-specs" data-project="chat" id="project-chat-specs">
+                                <i class="fa-solid fa-diagram-project"></i> Deep Dive &amp; Arch
+                            </button>
+                            <a href="https://github.com/KIRI001" target="_blank" rel="noopener" class="btn-project-link" id="project-chat-github">
+                                <i class="fa-brands fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive AI Model Playground Section -->
+        <section class="ai-playground-section" id="ai-playground">
+            <div class="container">
+                <div class="section-title-wrapper" data-reveal="fade-up">
+                    <span class="section-subtitle">Live Interactive Inference</span>
+                    <h2 class="section-title">Deep Learning Diagnostic Simulator</h2>
+                </div>
+                
+                <div class="playground-card glass" data-reveal="fade-up">
+                    <div class="playground-grid">
+                        <!-- Left: Controls & Image Selection -->
+                        <div class="playground-controls">
+                            <h3><i class="fa-solid fa-microscope text-glow"></i> Pityriasis Alba Classifier Demo</h3>
+                            <p class="playground-hint">Select a medical scanning sample below to run live CNN model inference simulation:</p>
+                            
+                            <div class="sample-selector-group">
+                                <button class="sample-btn active" data-sample="sample1">
+                                    <i class="fa-solid fa-virus"></i> Sample A (Mild Patch)
+                                </button>
+                                <button class="sample-btn" data-sample="sample2">
+                                    <i class="fa-solid fa-circle-exclamation"></i> Sample B (Classical Alba)
+                                </button>
+                                <button class="sample-btn" data-sample="sample3">
+                                    <i class="fa-solid fa-shield-halved"></i> Sample C (Control Group)
+                                </button>
+                            </div>
+
+                            <button class="btn btn-primary run-inference-btn" id="run-inference-btn">
+                                <i class="fa-solid fa-play"></i> Execute CNN Inference
+                            </button>
+
+                            <div class="pipeline-steps-box">
+                                <h4>Pipeline Steps Execution:</h4>
+                                <ul class="pipeline-list">
+                                    <li class="step-item step-done" id="step-preprocess"><i class="fa-solid fa-check"></i> 1. Preprocessing &amp; Roboflow Resizing (224x224)</li>
+                                    <li class="step-item step-done" id="step-features"><i class="fa-solid fa-check"></i> 2. Convolutional Feature Map Extraction</li>
+                                    <li class="step-item step-done" id="step-classification"><i class="fa-solid fa-check"></i> 3. Dense Layer Softmax Classification</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Right: Visual Scan Output & Metrics -->
+                        <div class="playground-visual">
+                            <div class="scanner-screen">
+                                <div class="scanner-scanline" id="scanner-line"></div>
+                                <div class="scan-sample-display" id="scan-sample-display">
+                                    <div class="scan-grid-overlay"></div>
+                                    <div class="scan-target-box">
+                                        <span class="target-corner top-left"></span>
+                                        <span class="target-corner top-right"></span>
+                                        <span class="target-corner bottom-left"></span>
+                                        <span class="target-corner bottom-right"></span>
+                                        <span class="scan-label-tag" id="scan-label-tag">Pityriasis Alba Detected</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="metrics-display-box">
+                                <div class="metric-gauge-item">
+                                    <span>Model Confidence Score</span>
+                                    <div class="gauge-bar-wrapper">
+                                        <div class="gauge-bar-fill" id="confidence-bar-fill" style="width: 95.31%;"></div>
+                                    </div>
+                                    <span class="gauge-val" id="confidence-val">95.31%</span>
+                                </div>
+                                <div class="metric-gauge-item">
+                                    <span>Classifier Recall Rate</span>
+                                    <div class="gauge-bar-wrapper">
+                                        <div class="gauge-bar-fill fill-cyan" style="width: 95.31%;"></div>
+                                    </div>
+                                    <span class="gauge-val">95.31%</span>
+                                </div>
+                                <div class="metric-gauge-item">
+                                    <span>Overall Accuracy</span>
+                                    <div class="gauge-bar-wrapper">
+                                        <div class="gauge-bar-fill fill-blue" style="width: 78.84%;"></div>
+                                    </div>
+                                    <span class="gauge-val">78.84%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section class="skills-section" id="skills">
+            <div class="container">
+                <div class="section-title-wrapper" data-reveal="fade-up">
+                    <span class="section-subtitle">What I Master</span>
+                    <h2 class="section-title">Technical Expertise</h2>
+                </div>
+                
+                <div class="skills-container-grid">
+                    <!-- Languages -->
+                    <div class="skills-card glass" data-reveal="fade-up">
+                        <div class="skills-card-header">
+                            <i class="fa-solid fa-code icon-title-skill"></i>
+                            <h3>Languages</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-tag">C</div>
+                            <div class="skill-tag">C++</div>
+                            <div class="skill-tag">Python</div>
+                            <div class="skill-tag">JavaScript</div>
+                        </div>
+                    </div>
+
+                    <!-- Frontend & Mobile -->
+                    <div class="skills-card glass" data-reveal="fade-up" data-delay="100">
+                        <div class="skills-card-header">
+                            <i class="fa-solid fa-display icon-title-skill"></i>
+                            <h3>Frontend &amp; UI</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-tag">HTML5</div>
+                            <div class="skill-tag">CSS3</div>
+                            <div class="skill-tag">React.js</div>
+                            <div class="skill-tag">React Native</div>
+                            <div class="skill-tag">Responsive Design</div>
+                        </div>
+                    </div>
+
+                    <!-- Backend & APIs -->
+                    <div class="skills-card glass" data-reveal="fade-up" data-delay="200">
+                        <div class="skills-card-header">
+                            <i class="fa-solid fa-server icon-title-skill"></i>
+                            <h3>Backend &amp; Communication</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-tag">Node.js</div>
+                            <div class="skill-tag">Express.js</div>
+                            <div class="skill-tag">REST APIs</div>
+                            <div class="skill-tag">Socket.IO</div>
+                        </div>
+                    </div>
+
+                    <!-- Databases -->
+                    <div class="skills-card glass" data-reveal="fade-up" data-delay="300">
+                        <div class="skills-card-header">
+                            <i class="fa-solid fa-database icon-title-skill"></i>
+                            <h3>Databases</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-tag">MongoDB</div>
+                            <div class="skill-tag">MySQL</div>
+                            <div class="skill-tag">SQLite</div>
+                        </div>
+                    </div>
+
+                    <!-- DevOps & Tools -->
+                    <div class="skills-card glass" data-reveal="fade-up" data-delay="400">
+                        <div class="skills-card-header">
+                            <i class="fa-solid fa-screwdriver-wrench icon-title-skill"></i>
+                            <h3>DevOps &amp; Infrastructure</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-tag">Git</div>
+                            <div class="skill-tag">GitHub</div>
+                            <div class="skill-tag">Docker</div>
+                            <div class="skill-tag">Postman</div>
+                            <div class="skill-tag">VS Code</div>
+                        </div>
+                    </div>
+
+                    <!-- AI & Machine Learning -->
+                    <div class="skills-card glass" data-reveal="fade-up" data-delay="500">
+                        <div class="skills-card-header">
+                            <i class="fa-solid fa-brain icon-title-skill"></i>
+                            <h3>AI / Machine Learning</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-tag">Machine Learning</div>
+                            <div class="skill-tag">Generative AI</div>
+                            <div class="skill-tag">Data Science</div>
+                            <div class="skill-tag">Model Training &amp; Deployment</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LeetCode & Problem Solving Metrics Card -->
+                <div class="leetcode-metrics-container glass" data-reveal="fade-up">
+                    <div class="leetcode-grid">
+                        <div class="leetcode-main-info">
+                            <div class="leetcode-icon-badge">
+                                <i class="fa-code-compare fa-solid"></i>
+                            </div>
+                            <div>
+                                <h3 class="leetcode-title">LeetCode &amp; Problem Solving Showcase</h3>
+                                <p class="leetcode-subtitle">Active Data Structures &amp; Algorithms Problem Solver</p>
+                            </div>
+                            <div class="leetcode-total-pill">
+                                <span class="total-number" data-counter-target="500">500+</span>
+                                <span class="total-text">Total Solved</span>
+                            </div>
+                        </div>
+
+                        <div class="leetcode-progress-bars">
+                            <div class="leetcode-bar-item">
+                                <div class="bar-header">
+                                    <span class="diff-tag diff-easy">Easy</span>
+                                    <span>180+ Solved</span>
+                                </div>
+                                <div class="bar-track">
+                                    <div class="bar-fill bar-easy" style="width: 36%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="leetcode-bar-item">
+                                <div class="bar-header">
+                                    <span class="diff-tag diff-medium">Medium</span>
+                                    <span>280+ Solved</span>
+                                </div>
+                                <div class="bar-track">
+                                    <div class="bar-fill bar-medium" style="width: 56%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="leetcode-bar-item">
+                                <div class="bar-header">
+                                    <span class="diff-tag diff-hard">Hard</span>
+                                    <span>40+ Solved</span>
+                                </div>
+                                <div class="bar-track">
+                                    <div class="bar-fill bar-hard" style="width: 8%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills & Concepts -->
+                <div class="skills-sub-grid" data-reveal="fade-up">
+                    <div class="sub-skills-card glass">
+                        <h4>Core Concepts</h4>
+                        <div class="skills-list">
+                            <span class="concept-badge">DSA</span>
+                            <span class="concept-badge">OOP</span>
+                            <span class="concept-badge">SDLC</span>
+                            <span class="concept-badge">Agile Methodologies</span>
+                        </div>
+                    </div>
+                    <div class="sub-skills-card glass">
+                        <h4>Soft Skills</h4>
+                        <div class="skills-list">
+                            <span class="concept-badge">Problem-Solving</span>
+                            <span class="concept-badge">Time Management</span>
+                            <span class="concept-badge">Adaptability</span>
+                            <span class="concept-badge">Team Collaboration</span>
+                            <span class="concept-badge">Leadership</span>
+                            <span class="concept-badge">Communication</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Education Timeline -->
+        <section class="timeline-section" id="experience">
+            <div class="container">
+                <div class="section-title-wrapper" data-reveal="fade-up">
+                    <span class="section-subtitle">Academic &amp; Certification Progress</span>
+                    <h2 class="section-title">Education &amp; Credentials</h2>
+                </div>
+                
+                <div class="timeline-container-grid">
+                    <!-- Left: Education -->
+                    <div class="timeline-column" data-reveal="fade-right">
+                        <h3 class="timeline-column-title"><i class="fa-solid fa-graduation-cap header-timeline-icon"></i> Education</h3>
+                        
+                        <div class="timeline-box">
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content glass">
+                                    <span class="timeline-date">08/2022 – 06/2026</span>
+                                    <h4>B.Tech in Computer Science &amp; Engineering</h4>
+                                    <p class="timeline-subtitle">Dumka Engineering College, Jharkhand</p>
+                                    <div class="gpa-pill">GPA: 7.1 / 10</div>
+                                    <p class="timeline-desc">
+                                        Relevant Coursework: Data Structures &amp; Algorithms (DSA), Database Management Systems (DBMS), Operating Systems (OS), Software Engineering, Machine Learning, Computer Networks, OOP.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Certifications -->
+                    <div class="timeline-column" data-reveal="fade-left">
+                        <h3 class="timeline-column-title"><i class="fa-solid fa-certificate header-timeline-icon"></i> Certifications</h3>
+                        
+                        <div class="timeline-box">
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content glass">
+                                    <span class="timeline-date">MERN Stack Development</span>
+                                    <h4>Full-Stack Developer Certificate</h4>
+                                    <p class="timeline-subtitle">Codec</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content glass">
+                                    <span class="timeline-date">Data Science</span>
+                                    <h4>Machine Learning &amp; Analytics</h4>
+                                    <p class="timeline-subtitle">Ardent</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content glass">
+                                    <span class="timeline-date">Generative AI</span>
+                                    <h4>LLMs &amp; Prompt Engineering</h4>
+                                    <p class="timeline-subtitle">Lawazia Tech</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content glass">
+                                    <span class="timeline-date">Python Programming</span>
+                                    <h4>Advanced Python Applications</h4>
+                                    <p class="timeline-subtitle">Coursera</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interests Block -->
+                <div class="interests-container glass" data-reveal="fade-up">
+                    <h4>Personal Interests &amp; Activities</h4>
+                    <div class="interests-grid">
+                        <div class="interest-badge-item">
+                            <i class="fa-solid fa-shuttlecock interest-icon"></i>
+                            <span>Badminton</span>
+                        </div>
+                        <div class="interest-badge-item">
+                            <i class="fa-solid fa-volleyball interest-icon"></i>
+                            <span>Volleyball</span>
+                        </div>
+                        <div class="interest-badge-item">
+                            <i class="fa-solid fa-pen-nib interest-icon"></i>
+                            <span>Writing</span>
+                        </div>
+                        <div class="interest-badge-item">
+                            <i class="fa-solid fa-book-open interest-icon"></i>
+                            <span>Reading</span>
+                        </div>
+                        <div class="interest-badge-item">
+                            <i class="fa-solid fa-calendar-check interest-icon"></i>
+                            <span>Event Management</span>
+                        </div>
+                        <div class="interest-badge-item">
+                            <i class="fa-solid fa-globe interest-icon"></i>
+                            <span>Open Source</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="section-title-wrapper" data-reveal="fade-up">
+                    <span class="section-subtitle">Get In Touch</span>
+                    <h2 class="section-title">Let's Collaborate</h2>
+                </div>
+                
+                <div class="contact-grid">
+                    <!-- Left: Details -->
+                    <div class="contact-details-box" data-reveal="fade-right">
+                        <h3>Connect with me directly</h3>
+                        <p>Feel free to reach out if you have job opportunities, project ideas, or questions about my developer projects.</p>
+                        
+                        <div class="contact-methods">
+                            <div class="method-card glass">
+                                <div class="method-icon-wrapper">
+                                    <i class="fa-regular fa-envelope"></i>
+                                </div>
+                                <div class="method-info">
+                                    <span>Email Address</span>
+                                    <a href="mailto:sheetalkumar.kr001@gmail.com" class="text-link">sheetalkumar.kr001@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="method-card glass">
+                                <div class="method-icon-wrapper">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div class="method-info">
+                                    <span>Phone Number</span>
+                                    <a href="tel:+918083280965" class="text-link">+91 8083280965</a>
+                                </div>
+                            </div>
+
+                            <div class="method-card glass">
+                                <div class="method-icon-wrapper">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div class="method-info">
+                                    <span>Current Location</span>
+                                    <p>Bangalore, Karnataka, India</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Form -->
+                    <div class="contact-form-box glass" data-reveal="fade-left">
+                        <form id="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="form-name">Name</label>
+                                    <input type="text" id="form-name" required placeholder="John Doe">
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-email">Email</label>
+                                    <input type="email" id="form-email" required placeholder="john@example.com">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="form-subject">Subject</label>
+                                <input type="text" id="form-subject" required placeholder="Collaboration Idea">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-message">Message</label>
+                                <textarea id="form-message" rows="5" required placeholder="Hi Sheetal, I'd like to talk about..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-full-width" id="btn-submit-form">
+                                Send Message <i class="fa-regular fa-paper-plane icon-right"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-bottom">
+        <div class="container footer-content-wrap">
+            <p>&copy; 2026 Sheetal Kumar. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/KIRI001" target="_blank" rel="noopener" id="footer-github">GitHub</a>
+                <a href="https://linkedin.com/in/sheetal-kumar-510b86257" target="_blank" rel="noopener" id="footer-linkedin">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Sheetal AI Assistant Chatbot -->
+    <div class="ai-assistant-wrapper" id="ai-assistant">
+        <!-- Floating Chat Bubble Toggle Button -->
+        <button class="ai-assistant-toggle shadow-glow" id="ai-chat-toggle" aria-label="Open Sheetal AI Assistant">
+            <i class="fa-solid fa-brain chat-icon-open"></i>
+            <i class="fa-solid fa-xmark chat-icon-close hidden"></i>
+            <span class="toggle-tooltip">Ask Sheetal's AI</span>
+        </button>
+
+        <!-- Chat Window Panel -->
+        <div class="ai-chat-panel glass hidden" id="ai-chat-panel">
+            <div class="panel-header">
+                <div class="header-avatar-status">
+                    <div class="avatar-small">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="status-name-info">
+                        <h4>Sheetal's AI Agent</h4>
+                        <span class="active-status-text"><span class="pulse-dot"></span> Online</span>
+                    </div>
+                </div>
+                <button class="panel-close-btn" id="panel-close-btn" aria-label="Close Chat Window">
+                    <i class="fa-solid fa-minus"></i>
+                </button>
+            </div>
+            
+            <div class="panel-body-chat" id="chat-messages-container">
+                <!-- Greetings message -->
+                <div class="chat-message bot-message">
+                    <div class="msg-bubble">
+                        Hello! I am Sheetal's virtual twin assistant. Ask me anything about his technical skill set, university projects, or academic background!
+                    </div>
+                    <span class="msg-time">Just Now</span>
+                </div>
+            </div>
+
+            <!-- Quick options/suggested questions -->
+            <div class="suggested-queries" id="suggested-questions-box">
+                <button class="suggested-btn" data-query="projects">🔍 View Key Projects</button>
+                <button class="suggested-btn" data-query="experience">💼 Tell me about AI Skin Disease project</button>
+                <button class="suggested-btn" data-query="skills">🛠️ MERN &amp; Backend Skills</button>
+                <button class="suggested-btn" data-query="contact">📞 How to contact Sheetal</button>
+            </div>
+
+            <!-- Chat input area -->
+            <div class="panel-footer-input">
+                <input type="text" id="chat-user-input" placeholder="Type a message or click above..." aria-label="Chat query input">
+                <button class="send-message-btn" id="chat-send-btn" aria-label="Send message">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- MODAL 1: RECRUITER FAST-TRACK EXECUTIVE OVERVIEW MODAL -->
+    <!-- ========================================================================= -->
+    <div class="modal-backdrop hidden" id="recruiter-modal">
+        <div class="modal-dialog glass">
+            <div class="modal-header">
+                <div class="modal-title-wrap">
+                    <span class="modal-badge"><i class="fa-solid fa-bolt"></i> 30-Second Candidate Summary</span>
+                    <h2>Executive Recruiter Overview</h2>
+                </div>
+                <button class="modal-close-btn" id="recruiter-modal-close" aria-label="Close Modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <!-- Quick Bio Pitch -->
+                <div class="recruiter-bio-box">
+                    <h3>Sheetal Kumar — Full-Stack &amp; AI Engineer</h3>
+                    <p>Final-year CSE Undergraduate (B.Tech 2022–2026, Dumka Engineering College, GPA: 7.1/10). Specializes in building end-to-end MERN web applications, REST APIs, and training CNN/Deep Learning models with real-world deployment accuracy.</p>
+                </div>
+
+                <!-- At-a-Glance Highlights Grid -->
+                <div class="recruiter-stats-grid">
+                    <div class="r-stat-card">
+                        <span class="r-stat-num text-glow">95.31%</span>
+                        <span class="r-stat-label">AI Diagnostic Recall</span>
+                    </div>
+                    <div class="r-stat-card">
+                        <span class="r-stat-num text-glow">500+</span>
+                        <span class="r-stat-label">LeetCode Problems</span>
+                    </div>
+                    <div class="r-stat-card">
+                        <span class="r-stat-num text-glow">&lt;200ms</span>
+                        <span class="r-stat-label">Socket Chat Latency</span>
+                    </div>
+                    <div class="r-stat-card">
+                        <span class="r-stat-num text-glow">June 2026</span>
+                        <span class="r-stat-label">Graduation / Available</span>
+                    </div>
+                </div>
+
+                <!-- Target Roles & Tech Stack Matrix -->
+                <div class="recruiter-details-grid">
+                    <div class="r-detail-block">
+                        <h4><i class="fa-solid fa-bullseye"></i> Ideal Target Roles</h4>
+                        <ul class="role-pills">
+                            <li>Full-Stack Engineer (MERN)</li>
+                            <li>AI/ML Software Engineer</li>
+                            <li>Backend Developer (Node/Python)</li>
+                            <li>Software Development Engineer (SDE 1)</li>
+                        </ul>
+                    </div>
+
+                    <div class="r-detail-block">
+                        <h4><i class="fa-solid fa-layer-group"></i> Core Tech Stack</h4>
+                        <p class="tech-matrix"><strong>Languages:</strong> Python, C++, C, JavaScript (ES6+)<br>
+                        <strong>Frontend:</strong> React.js, React Native, HTML5, CSS3, Tailwind<br>
+                        <strong>Backend &amp; DB:</strong> Node.js, Express.js, MongoDB, REST APIs, Socket.IO, Docker</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="btn-copy-brief">
+                    <i class="fa-regular fa-copy"></i> Copy Candidate Brief
+                </button>
+                <a href="mailto:sheetalkumar.kr001@gmail.com" class="btn btn-secondary">
+                    <i class="fa-regular fa-envelope"></i> Email Candidate
+                </a>
+                <button class="btn btn-outline" id="btn-download-resume">
+                    <i class="fa-solid fa-file-arrow-down"></i> Quick Resume View
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- MODAL: EXECUTIVE RESUME VIEW -->
+    <!-- ========================================================================= -->
+    <div class="modal-backdrop hidden" id="resume-modal">
+        <div class="modal-dialog glass modal-resume-dialog">
+            <div class="modal-header">
+                <div class="modal-title-wrap">
+                    <span class="modal-badge"><i class="fa-solid fa-file-lines"></i> Executive Resume</span>
+                    <h2>Sheetal Kumar &mdash; Resume</h2>
+                </div>
+                <div class="resume-header-actions">
+                    <button class="btn btn-primary btn-sm" id="btn-print-resume">
+                        <i class="fa-solid fa-print"></i> Print / Save PDF
+                    </button>
+                    <button class="modal-close-btn" id="resume-modal-close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-body resume-body">
+                <div class="resume-paper">
+                    <!-- Header -->
+                    <div class="r-header">
+                        <h1 class="r-name">Sheetal Kumar</h1>
+                        <p class="r-subtitle">Full-Stack Developer &amp; AI Engineer</p>
+                        <div class="r-contact-bar">
+                            <span><i class="fa-solid fa-envelope"></i> <a href="mailto:sheetalkumar.kr001@gmail.com">sheetalkumar.kr001@gmail.com</a></span>
+                            <span><i class="fa-solid fa-phone"></i> +91 8083280965</span>
+                            <span><i class="fa-solid fa-location-dot"></i> Bangalore, Karnataka, India</span>
+                            <span><i class="fa-brands fa-github"></i> <a href="https://github.com/KIRI001" target="_blank">github.com/KIRI001</a></span>
+                            <span><i class="fa-brands fa-linkedin-in"></i> <a href="https://linkedin.com/in/sheetal-kumar-510b86257" target="_blank">LinkedIn</a></span>
+                        </div>
+                    </div>
+
+                    <!-- Professional Summary -->
+                    <div class="r-section">
+                        <h3 class="r-sec-title"><i class="fa-solid fa-user"></i> Professional Summary</h3>
+                        <p class="r-text">Motivated Full-Stack &amp; AI Developer with hands-on experience in the MERN stack, Machine Learning, and Generative AI. Proven track record of building production-grade applications including an AI-powered skin disease detection system (95.31% recall), real-time chat platforms, and intelligent travel planners. Skilled in end-to-end development from data preprocessing and model training to deploying scalable REST APIs and responsive frontends.</p>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="r-section">
+                        <h3 class="r-sec-title"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                        <div class="r-item">
+                            <div class="r-item-head">
+                                <strong>B.Tech &mdash; Computer Science &amp; Engineering</strong>
+                                <span class="r-date">2022 &ndash; 2026</span>
+                            </div>
+                            <p class="r-sub">Dumka Engineering College, Jharkhand &nbsp;|&nbsp; GPA: 7.1 / 10</p>
+                        </div>
+                    </div>
+
+                    <!-- Projects -->
+                    <div class="r-section">
+                        <h3 class="r-sec-title"><i class="fa-solid fa-diagram-project"></i> Key Projects</h3>
+
+                        <div class="r-item">
+                            <div class="r-item-head">
+                                <strong>Automated Pityriasis Alba Detection &mdash; Deep Learning</strong>
+                                <span class="r-tag">Python &middot; CNN &middot; Flask &middot; React.js</span>
+                            </div>
+                            <ul class="r-bullets">
+                                <li>Developed an AI-powered skin disease detection system with <strong>78.84% accuracy</strong> and <strong>95.31% recall</strong>.</li>
+                                <li>Trained CNN models on annotated dermatology datasets, preprocessed via Roboflow (224&times;224).</li>
+                                <li>Built image upload and prediction pipeline for real-time detection with Flask REST backend.</li>
+                            </ul>
+                        </div>
+
+                        <div class="r-item">
+                            <div class="r-item-head">
+                                <strong>Mental Health Wellness Platform &mdash; MERN Stack</strong>
+                                <span class="r-tag">MongoDB &middot; Express &middot; React &middot; Node.js</span>
+                            </div>
+                            <ul class="r-bullets">
+                                <li>Full-stack platform supporting anonymous journaling, medicine tracking, and built-in reminders.</li>
+                                <li>JWT authentication and bcrypt password hashing with 0 security vulnerabilities.</li>
+                                <li>Responsive UI tested across 5+ device breakpoints.</li>
+                            </ul>
+                        </div>
+
+                        <div class="r-item">
+                            <div class="r-item-head">
+                                <strong>AI-Powered Travel Planner</strong>
+                                <span class="r-tag">React &middot; Node.js &middot; MongoDB &middot; 3 APIs</span>
+                            </div>
+                            <ul class="r-bullets">
+                                <li>Generates custom itineraries in under 2 minutes leveraging 3 third-party APIs.</li>
+                                <li>Drag-and-drop schedule planner UI with MongoDB session persistence and 99% uptime.</li>
+                            </ul>
+                        </div>
+
+                        <div class="r-item">
+                            <div class="r-item-head">
+                                <strong>Real-Time Chat Application &mdash; Cross-Platform</strong>
+                                <span class="r-tag">React Native &middot; Socket.IO &middot; Docker</span>
+                            </div>
+                            <ul class="r-bullets">
+                                <li>Cross-platform mobile chat with latency under 200ms across 10+ concurrent sessions.</li>
+                                <li>Containerised backend with Docker, reducing setup time to under 5 minutes.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Technical Skills -->
+                    <div class="r-section">
+                        <h3 class="r-sec-title"><i class="fa-solid fa-code"></i> Technical Skills</h3>
+                        <div class="r-skills-grid">
+                            <p><strong>Languages:</strong> Python, C++, C, JavaScript (ES6+)</p>
+                            <p><strong>Frontend:</strong> React.js, React Native, HTML5, CSS3, Tailwind CSS</p>
+                            <p><strong>Backend &amp; DB:</strong> Node.js, Express.js, MongoDB, MySQL, SQLite, REST APIs, Socket.IO</p>
+                            <p><strong>DevOps &amp; Tools:</strong> Docker, Git/GitHub, Postman, VS Code</p>
+                            <p><strong>AI / ML:</strong> Machine Learning, Deep Learning (CNN), Generative AI, Data Science, Model Training &amp; Deployment</p>
+                        </div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="r-section">
+                        <h3 class="r-sec-title"><i class="fa-solid fa-certificate"></i> Certifications</h3>
+                        <ul class="r-bullets">
+                            <li>MERN Stack Development &mdash; Codec</li>
+                            <li>Data Science &mdash; Ardent</li>
+                            <li>Generative AI &mdash; Lawazia Tech</li>
+                            <li>Python Programming &mdash; Coursera</li>
+                        </ul>
+                    </div>
+
+                    <!-- Competitive Programming -->
+                    <div class="r-section">
+                        <h3 class="r-sec-title"><i class="fa-solid fa-trophy"></i> Competitive Programming</h3>
+                        <p class="r-text">500+ problems solved on LeetCode across Easy, Medium, and Hard difficulty levels, demonstrating strong algorithmic thinking and problem-solving skills.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- MODAL 2: PROJECT ARCHITECTURE &amp; DEEP DIVE MODAL -->
+    <!-- ========================================================================= -->
+    <div class="modal-backdrop hidden" id="project-modal">
+        <div class="modal-dialog glass modal-large">
+            <div class="modal-header">
+                <div class="modal-title-wrap">
+                    <span class="modal-badge" id="modal-project-category">Architecture Deep-Dive</span>
+                    <h2 id="modal-project-title">Project Architecture &amp; System Flow</h2>
+                </div>
+                <button class="modal-close-btn" id="project-modal-close" aria-label="Close Modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="modal-body" id="project-modal-body">
+                <!-- Dynamically populated via app.js -->
+            </div>
+
+            <div class="modal-footer">
+                <a href="https://github.com/KIRI001" target="_blank" rel="noopener" class="btn btn-primary" id="modal-project-github">
+                    <i class="fa-brands fa-github"></i> Inspect Repository Code
+                </a>
+                <button class="btn btn-outline" id="project-modal-close-btn">
+                    Close Specs
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- MODAL 3: DEVELOPER CLI / COMMAND PALETTE (CTRL+K) -->
+    <!-- ========================================================================= -->
+    <div class="modal-backdrop hidden" id="command-palette-modal">
+        <div class="cli-dialog glass">
+            <div class="cli-header">
+                <div class="cli-dots">
+                    <span class="dot-red"></span>
+                    <span class="dot-yellow"></span>
+                    <span class="dot-green"></span>
+                </div>
+                <div class="cli-title">sheetal_kumar_cli_v2.4</div>
+                <span class="cli-shortcut-hint">ESC to exit</span>
+            </div>
+
+            <div class="cli-body" id="cli-output-container">
+                <p class="cli-welcome">Welcome to Sheetal's Developer Terminal. Type <span class="cmd-text">'help'</span> for list of interactive commands.</p>
+            </div>
+
+            <div class="cli-input-line">
+                <span class="cli-prompt">sheetal@portfolio:~$</span>
+                <input type="text" id="cli-input" autofocus placeholder="Try 'recruiter', 'projects', 'skills', 'contact', 'help'..." autocomplete="off">
+            </div>
+
+            <div class="cli-quick-tags">
+                <span class="cli-tag" data-cmd="recruiter">⚡ recruiter</span>
+                <span class="cli-tag" data-cmd="projects">🚀 projects</span>
+                <span class="cli-tag" data-cmd="skills">🛠️ skills</span>
+                <span class="cli-tag" data-cmd="leetcode">📊 leetcode</span>
+                <span class="cli-tag" data-cmd="contact">📬 contact</span>
+                <span class="cli-tag" data-cmd="clear">🧹 clear</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Overlay Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Main JavaScript Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
